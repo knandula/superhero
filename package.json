@@ -5,6 +5,13 @@
     "test": "grunt serve"
   },
   "Dependencies": {
+
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "grunt-cli": "^0.1.13",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "^2.0.0",
@@ -29,11 +36,5 @@
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
     "time-grunt": "^1.0.0"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "dependencies": {
-    "grunt-cli": "^0.1.13"
   }
 }
