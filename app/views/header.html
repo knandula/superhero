@@ -1,0 +1,54 @@
+<div ng-controller="headerCtrl" class="navbar navbar-inverse navbar-twitch" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <span class="small-nav"> <span class="logo"> <B> </span> </span>
+        <span class="full-nav"> < fictiontree > </span>
+      </a>
+    </div>
+    <div class="">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active">
+          <a ui-sref="main">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home">
+							<span class="glyphicon glyphicon-home"></span>
+						</span>
+            <span class="full-nav"> Home </span>
+          </a>
+        </li>
+        <li ng-hide="isAuthenticated()" ui-sref-active="active">
+          <a ui-sref="login">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us">
+							<span class="glyphicon glyphicon-log-in"></span>
+						</span>
+            <span class="full-nav"> Login </span>
+          </a>
+        </li>
+        <li ui-sref-active="active">
+          <a href="#contact-us">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Contact Us">
+							<span class="glyphicon glyphicon-fire"></span>
+						</span>
+            <span class="full-nav"> Contact Us </span>
+          </a>
+        </li>
+        <li ng-hide="isAuthenticated()" ui-sref-active="active">
+          <a ui-sref="register">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Contact Us">
+							<span class="glyphicon glyphicon-user"></span>
+						</span>
+            <span class="full-nav"> Register </span>
+          </a>
+        </li>
+        <li ng-show="isAuthenticated()" ui-sref-active="active">
+          <a ui-sref="logout">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Contact Us">
+							<span class="glyphicon glyphicon-user"></span>
+						</span>
+            <span class="full-nav"> Logout </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

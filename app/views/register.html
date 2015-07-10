@@ -1,9 +1,9 @@
 <div class="jumbotron container-fluid">
   <div class="col-xs-10 col-sm-4 col-lg-6">
-    <h1> Fiction Repository  Interpretation Platform</h1>
+    <h1> Fiction Repository & Interpretation Platform</h1>
   </div>
   <div class="col-xs-8 col-lg-6">
-    <form name="register" class="form-signin" novalidate="">
+    <form ng-submit="submit()" name="register" class="form-signin" novalidate="">
     <h2 class="form-signin-heading text-muted">reserve your space</h2>
   <input type="email" name="email" ng-model="email" class="form-control" placeholder="Email address" required="" autofocus="">
    <p class="help-block" ng-show="register.email.$dirty && register.email.$invalid">Please enter proper email.</p>
