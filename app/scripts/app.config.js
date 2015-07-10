@@ -31,4 +31,4 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
   //$httpProvider.interceptors.push('authInterceptor');
 })
 
-.constant('API_URL','http://localhost:3000/');
+.constant('API_URL','https://fictiontreeapi.herokuapp.com/');
