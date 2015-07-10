@@ -17,8 +17,6 @@ angular.module('fictiontree2App').controller('RegisterCtrl', function ($scope,$r
         .error(function(err){
           alert('warning','Something went wrong :(',err.message);
         });
-
-      $state.go('main');
     }
   });
 
