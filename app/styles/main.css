@@ -265,64 +265,43 @@ small.text-muted {
 }
 
 
-/*
- * off canvas sidebar
- * --------------------------------------------------
- */
-@media screen and (max-width: 768px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
-
-  .row-offcanvas-left.active {
-    left:10%;
-  }
-
-  .row-offcanvas-left.active .sidebar-offcanvas {
-    left: -10%;
-    position: absolute;
-    top: 0;
-    width: 10%;
-    margin-left: 0px;
-  }
-
-  #sidebar, #sidebar a, #sidebar-footer a {
-    padding-left:3px;
-  }
+#custom-search-input {
+  margin:0;
+  margin-top: 150px;
+  margin-left: 250px;
+  padding: 0;
+  max-width: 600px;
 }
 
-#pinBoot {
-  max-width: 100%;
-  position:relative;
+#custom-search-input .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
-}
-
-.white-panel {
-  position: absolute;
-  background: white;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-  padding: 10px;
-}
-
-.white-panel h1 {
-  font-size: 1em;
-}
-.white-panel h1 a {
-  color: #A92733;
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 30px;
 }
 
-.white-panel img {
-  width: 250px;
-  height: 250px;
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color:#D9230F;
 }
-.white-panel:hover {
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  margin-top: -5px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+
+.search-query:focus + button {
+  z-index: 3;
 }
