@@ -2,38 +2,48 @@
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-        <span class="small-nav"> <span class="logo"> <B> </span> </span>
-        <span class="full-nav"> < fictiontree > </span>
+        <span class="small-nav"> <span>Fictiontree</span> </span>
       </a>
     </div>
-    <div class="">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-header navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Comics</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Character</a></li>
+            <li><a href="#">Title</a></li>
+            <li><a href="#">Person</a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active">
+          <div ng-include="'views/search.html'"/>
+        </li>
         <li ui-sref-active="active">
           <a ui-sref="main">
 						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home">
 							<span class="glyphicon glyphicon-home"></span>
 						</span>
-            <span class="full-nav"> Home </span>
+            <span class="full-nav"></span>
           </a>
         </li>
-        <li ng-hide="isAuthenticated()" ui-sref-active="active">
-          <a ui-sref="login">
+        <li ng-hide="isAuthenticated()" ui-sref-active="active"  href="#postModal" role="button" data-toggle="modal" >
+
+          <a ui-sref="login" >
 						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="About Us">
 							<span class="glyphicon glyphicon-log-in"></span>
 						</span>
             <span class="full-nav"> Login </span>
           </a>
         </li>
-        <li ui-sref-active="active">
-          <a href="#contact-us">
-						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Contact Us">
-							<span class="glyphicon glyphicon-fire"></span>
-						</span>
-            <span class="full-nav"> Contact Us </span>
-          </a>
-        </li>
-        <li ng-hide="isAuthenticated()" ui-sref-active="active">
-          <a ui-sref="register">
+        <li ng-hide="isAuthenticated()" ui-sref-active="active"  href="#postModal" role="button" data-toggle="modal" >
+          <a ui-sref="register" ui-sref-active="active">
 						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Contact Us">
 							<span class="glyphicon glyphicon-user"></span>
 						</span>
@@ -48,7 +58,43 @@
             <span class="full-nav"> Logout </span>
           </a>
         </li>
+        <li ui-sref-active="active">
+          <a href="#contact-us">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Contact Us">
+							<span class="glyphicon glyphicon-fire"></span>
+						</span>
+            <span class="full-nav"> Contact Us </span>
+          </a>
+        </li>
       </ul>
-    </div>
+
+
   </div>
 </div>
+<!--post modal-->
+<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div ui-view="login"></div>
+        <div ui-view="register"></div>
+  </div>
+
+<script>
+$(document).ready(function(){
+
+  $(".dropdown").hover(
+  function() {
+  $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+  $(this).toggleClass('open');
+  },
+  function() {
+  $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+  $(this).toggleClass('open');
+  }
+  );
+
+  $(".dropdown-menu").on('click', 'li a', function(){
+    $(".btn:first-child").text($(this).text());
+    $(".btn:first-child").val($(this).text());
+  });
+});
+
+</script>

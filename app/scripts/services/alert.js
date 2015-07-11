@@ -15,7 +15,7 @@ angular.module('fictiontree2App')
       $timeout.cancel(alertTimeout);
       alertTimeout = $timeout(function() {
         $rootScope.alert.show = false;
-      },timeout || 2000);
+      },timeout || 100);
 
     }
   });

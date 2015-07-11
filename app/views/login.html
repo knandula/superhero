@@ -1,17 +1,21 @@
-<div ng-show="!isAuthenticated" class="jumbotron container-fluid">
-  <div class="col-xs-10 col-sm-4 col-lg-6">
-    <h1> Fiction Repository &  Interpretation Platform</h1>
-  </div>
-    <div class="col-xs-8 col-lg-6">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="well">
       <form ng-submit="submit()" name="login" class="form-signin" novalidate="">
-        <h2 class="form-signin-heading text-muted">welcome back</h2>
+        <h2 class="form-signin-heading">please sign in</h2>
         <input type="email" name="email" ng-model="email" class="form-control" placeholder="Email address" required="" autofocus="">
         <p class="help-block" ng-show="register.email.$dirty && register.email.$invalid">Please enter proper email.</p>
         <input name="password" type="password" ng-model="password" class="form-control" placeholder="Password" required>
-        <button ng-disabled="register.$invalid"  class="btn btn-lg btn-primary btn-block" type="submit">
+        <button id="loginsubmit" ng-disabled="login.$invalid"  class="btn btn-lg btn-primary btn-block" type="submit"  >
           Sign In
         </button>
         </form>
+      </div>
+      </div>
     </div>
-</div>
+    </div>
+
+
+
 

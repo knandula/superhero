@@ -9,20 +9,37 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
 
   $stateProvider
 
-    .state('main',{
+     .state('main',{
       url: '/',
-      templateUrl: '/views/main.html'
-    })
+      templateUrl: '/views/main.html',
+      controller: 'MainCtrl'
+      })
+
     .state('register',{
       url: '/register',
-      templateUrl: '/views/register.html',
-      controller: 'RegisterCtrl'
-  })
+      views:{
+        'register' : {
+          templateUrl: '/views/register.html',
+          controller: 'RegisterCtrl'
+        }
+      }})
     .state('login',{
       url: '/login',
-      templateUrl: '/views/login.html',
-      controller: 'LoginCtrl'
-    })
+      views:{
+        'login' : {
+          templateUrl: '/views/login.html',
+          controller: 'LoginCtrl'
+        }
+    }})
+
+    .state('search',{
+      url: '/search',
+      views:{
+        'search' : {
+          templateUrl: '/views/search.html',
+          controller:'SearchCtrl'
+        }
+    }})
     .state('logout',{
       url: '/logout',
       controller: 'LogoutCtrl'

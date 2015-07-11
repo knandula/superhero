@@ -3010,7 +3010,7 @@ select[multiple].input-lg {
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   cursor: pointer;
-  background-image: none;
+  background-image:   linear-gradient(#45619D, #45619D 60%, #45619D);
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 8px 12px;
@@ -3060,8 +3060,6 @@ fieldset[disabled] a.btn {
 }
 .btn-default {
   color: #ffffff;
-  background-color: #3a3f44;
-  border-color: #3a3f44;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -4640,11 +4638,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #cccccc;
 }
 .navbar-inverse {
-  background-color: #7a8288;
-  border-color: #62686d;
+  background-color: #45619D;
+  border-color: #45619D;
 }
 .navbar-inverse .navbar-brand {
-  color: #cccccc;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -6798,22 +6796,22 @@ button.close {
   }
 }
 .navbar {
-  background-image: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
-  background-image: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background-image: -webkit-linear-gradient(#45619D, #3a3f44 60%, #45619D);
+  background-image: -o-linear-gradient(#45619D, #3a3f44 60%, #45619D);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#484e55), color-stop(60%, #3a3f44), to(#313539));
-  background-image: linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background-image: linear-gradient(#45619D, #3a3f44 60%, #45619D);
   background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff484e55', endColorstr='#ff313539', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45619D', endColorstr='#45619D', GradientType=0);
   -webkit-filter: none;
           filter: none;
   border: 1px solid rgba(0, 0, 0, 0.6);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 .navbar-inverse {
-  background-image: -webkit-linear-gradient(#8a9196, #7a8288 60%, #70787d);
-  background-image: -o-linear-gradient(#8a9196, #7a8288 60%, #70787d);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a9196), color-stop(60%, #7a8288), to(#70787d));
-  background-image: linear-gradient(#8a9196, #7a8288 60%, #70787d);
+  background-image: -webkit-linear-gradient(#45619D, #45619D 60%, #45619D);
+  background-image: -o-linear-gradient(#45619D, #45619D 60%, #45619D);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#45619D), color-stop(60%, #45619D), to(#45619D));
+  background-image: linear-gradient(#45619D, #45619D 60%, #45619D);
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8a9196', endColorstr='#ff70787d', GradientType=0);
   -webkit-filter: none;

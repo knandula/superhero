@@ -23,28 +23,84 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div id="fullscreen_bg" class="fullscreen_bg"/>
+    <div class="wrapper">
+      <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <!-- sidebar -->
+          <div class="column col-sm-1 col-xs-0 sidebar-offcanvas" id="sidebar">
 
-    <div ng-include="'views/header.html'"></div>
+            <ul class="nav">
+              <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+            </ul>
 
+            <ul class="nav hidden-xs" id="lg-menu">
+              <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> </a></li>
+              <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> </a></li>
+              <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> </a></li>
+              <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> </a></li>
+            </ul>
+            <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+              <li>
+                <h3></h3>
+              </li>
+            </ul>
 
+            <!-- tiny only nav-->
+            <ul class="nav visible-xs" id="xs-menu">
+              <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+              <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
+              <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+              <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+            </ul>
 
-    <div class="container" ng-cloak>
-      <div class="alert alert-{{alert.type}} animated main-alert" ng-class="{'flipInY': alert.show,'flipOutY': !alert.show,'alert-hidden':!alert.hasBeenShown}"><strong>{{alert.title}}</strong>{{alert.message}}</div>
-    <div class="row">
-      <div class="ui-view-container">
-          <div ui-view></div>
+          </div>
+          <!-- /sidebar -->
 
+          <!-- main right col -->
+          <div class="column col-sm-11 col-xs-12" id="main">
+
+            <!-- top nav -->
+            <div ng-include="'views/header.html'"></div>
+            <!--<div class="alert alert-{{alert.type}} animated main-alert" ng-class="{'flash': alert.show,'flash': !alert.show,'alert-hidden':!alert.hasBeenShown}"><strong>{{alert.title}}</strong>{{alert.message}}</div>-->
+
+            <div class="padding">
+              <div class="full col-sm-9">
+                <!-- content -->
+                <div class="row">
+
+                  <div ui-view></div>
+                </div>
+                <!--<div class="row">-->
+                  <!--&lt;!&ndash; main col left &ndash;&gt;-->
+                  <!--<div class="col-sm-7">-->
+                    <!--<div class="panel panel-default">-->
+                      <!--<div class="panel-body">-->
+                      <!--</div>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--&lt;!&ndash; main col right &ndash;&gt;-->
+                  <!--<div class="col-sm-5">-->
+                    <!--<div class="well">-->
+                      <!--<form class="form">-->
+                        <!--<h4>Sign-up</h4>-->
+                        <!--<div class="input-group text-center">-->
+                          <!--<input type="text" class="form-control input-lg" placeholder="Enter your email address">-->
+                          <!--<span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">OK</button></span>-->
+                        <!--</div>-->
+                      <!--</form>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
+              </div><!-- /col-9 -->
+            </div><!-- /padding -->
+          </div>
+          <!-- /main -->
+
+        </div>
       </div>
     </div>
 
-      <div class="footer"></div>
-    </div>
-    </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
@@ -77,6 +133,20 @@
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/logout.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
         <!-- endbuild -->
+<script>
+    /* off-canvas sidebar toggle */
+
+    $('[data-toggle=offcanvas]').click(function() {
+    $(this).toggleClass('visible-xs text-center');
+    $(this).find('i').toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
+    $('.row-offcanvas').toggleClass('active');
+    $('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
+    $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
+    $('#btnShow').toggle();
+    });
+</script>
 </body>
 </html>

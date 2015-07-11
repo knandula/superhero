@@ -13,6 +13,8 @@ angular.module('fictiontree2App').controller('RegisterCtrl', function ($scope,$r
         .success(function(res){
           alert('success',' Account Created ! ', "Welcome " + user.email + " !");
           authToken.setToken(res.token);
+          $scope.isAuthenticated = authToken.isAuthenticated;
+          $("#postModal").modal('hide');
         })
         .error(function(err){
           alert('warning','Something went wrong :(',err.message);
