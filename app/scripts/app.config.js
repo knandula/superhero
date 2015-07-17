@@ -4,7 +4,7 @@
  * Created by knandula on 7/9/2015.
  */
 angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvider,$authProvider,API_URL){
-  var clientId = '627609735136-25od75c7mf6rijeqlps65288uir7undm.apps.googleusercontent.com';
+
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -44,7 +44,7 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
 
 
     $authProvider.google({
-      clientId:'627609735136-25od75c7mf6rijeqlps65288uir7undm.apps.googleusercontent.com',
+      clientId:'627609735136-qr51auft4rbol3moaegoclvku2b8jfa6.apps.googleusercontent.com',
       url: API_URL + 'auth/google'
     })
 

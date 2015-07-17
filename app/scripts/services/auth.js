@@ -10,7 +10,7 @@ angular.module('fictiontree2App').service('auth', function ($state,$http,authTok
 
   var urlBuilder = [];
 
-  var clientId = '627609735136-csn9l71i3plm238nhm4qticft60smd81.apps.googleusercontent.com';
+  var clientId = '627609735136-qr51auft4rbol3moaegoclvku2b8jfa6.apps.googleusercontent.com';
 
   urlBuilder.push('response_type=code',
                   'client_id=' + clientId,
