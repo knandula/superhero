@@ -1,8 +1,9 @@
 'use strict';
 
 
-angular.module('fictiontree2App').controller('LogoutCtrl', function (authToken) {
+angular.module('fictiontree2App').controller('LogoutCtrl', function ($auth,authToken,$state) {
 
-    authToken.removeToken();
+  $auth.logout();
+  authToken.removeToken();
     $state.go('main');
   });

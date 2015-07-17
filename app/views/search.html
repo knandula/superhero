@@ -1,0 +1,55 @@
+<div class="row">
+  <div id="custom-search-input">
+    <div class="input-group col-md-5">
+      <input id="mycharinput" type="text" class="form-control input-lg" placeholder="Character" autocomplete="off"  />
+                    <span class="input-group-btn" >
+                        <button class="btn btn-info btn-lg" type="button" ng-click="publishClick('char')" >
+                          <i class="glyphicon glyphicon-search" ></i>
+                        </button>
+                    </span>
+    </div>
+    <div id="custom-search-input1">
+      <div class="input-group col-md-5">
+        <input id="mymovieinput" type="text" class="form-control input-lg" placeholder="Movie"  autocomplete="off"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" ng-click="publishClick('movie')">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+      </div>
+      <div id="custom-search-input2">
+        <div class="input-group col-md-5">
+          <input type="text" class="form-control input-lg" placeholder="Person" id="myactorinput"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" ng-click="publishClick('person')">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+        </div>
+        <div id="custom-search-input3">
+          <div class="input-group col-md-5">
+            <input type="text" class="form-control input-lg" placeholder="Thing" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$("#mycharinput").suggest({key: "AIzaSyDVM18usZy6B_2_VgJILdPiHEx9oBH5pXc",filter: '(all type:"/film/film_character")'}).bind("fb-select", function (e, data) {
+document.getElementById('mycharinput').value = data.name;
+});
+
+$("#mymovieinput").suggest({key: "AIzaSyDVM18usZy6B_2_VgJILdPiHEx9oBH5pXc",filter: '(all type:"/film/film")'}).bind("fb-select", function (e, data) {
+document.getElementById('mymovieinput').value = data.name;
+});
+
+$("#myactorinput").suggest({key: "AIzaSyDVM18usZy6B_2_VgJILdPiHEx9oBH5pXc",filter: '(any type:/people/person)'}).bind("fb-select", function (e, data) {
+document.getElementById('myactorinput').value = data.name;
+});
+</script>

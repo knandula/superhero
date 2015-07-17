@@ -1,17 +1,13 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name fictiontree2App.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the fictiontree2App
- */
-angular.module('fictiontree2App')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('fictiontree2App').controller('MainCtrl', function ($scope,auth,authToken,alert,$auth) {
+
+    $scope.authenticate = function(provider){
+        $auth.authenticate(provider).then(function(res){
+          console.log(res);
+          alert('success','Welcome  ' + res.data.user.displayName + " !");
+        },function(err){
+          alert('warning','Something went wrong :(   ',err.message);
+        });
+    };
   });
