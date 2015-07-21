@@ -27,7 +27,7 @@
     <div id="fullscreen_bg" class="fullscreen_bg"/>
     <div ng-include="'views/header.html'"></div>
     <div class="container" ng-cloak>
-      <div class="alert alert-{{alert.type}} animated main-alert" ng-class="{'flipInY': alert.show,'flipOutY': !alert.show,'hidden':!alert.hasBeenShown}"><strong>{{alert.title}}</strong>{{alert.message}}</div>
+      <!--<div class="alert alert-{{alert.type}} animated main-alert" ng-class="{'flipInY': alert.show,'flipOutY': !alert.show,'alert-hidden':!alert.hasBeenShown}"><strong>{{alert.title}}</strong>{{alert.message}}</div>-->
     <div class="row">
       <div class="ui-view-container">
           <div ui-view></div>
