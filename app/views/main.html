@@ -1,25 +1,64 @@
 <div class="container">
   <div class="row">
-      <div class="col-md-7" ng-controller="SearchCtrl">
+      <div class="col-md-5" ng-controller="SearchCtrl">
          <div ng-include="'views/search.html'"></div>
-
-        <ul class="social-network social-circle">
-          <li>for early access ? Join now.</li>
-          <li ><a href="#" class="icoFacebook" style="background-color:#5bc0de" ng-click="authenticate('facebook')" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#" class="icoGoogle" style="background-color:#5bc0de" ng-click="authenticate('google')" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-        </ul>
       </div>
-      <div class="col-md-5" >
+      <div class="col-md-7" >
         <div ng-include="'views/userinfohome.html'"></div>
       </div>
+
 </div>
   <div class="row" ng-controller="TriadCtrl">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-2">
 
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-10">
+      <section>
+        <div class="container userlike">
+          <div class="row">
+            <form action="#" class="form-inline lead-big" role="form">
+              <div class="form-group">
+                <label for="name">Hello, I am <span>Your name</span></label>
+                <input type="text" id="name" class="form-control input-lg" placeholder="@yourname" required>
+                and
+                <label id="character"> my favourite  <span>character</span></label>
+                <input id="mycharinput" type="text" class="form-control input-lg" placeholder="Character" autocomplete="off"  />
+                <label id="movielabel"> , my best fiction <span>movie</span></label>
+                <input id="mymovieinput" type="text" class="form-control input-lg" placeholder="Movie"  autocomplete="off"/>
+                <label id="personlabel">, actor/person i love most    -<span></span></label>
+                <input type="text" class="form-control input-lg" placeholder="Actor" id="myactorinput"/>
+               <label id="thinglable"> , the object i love more</label>
+                <input type="text" class="form-control input-lg" placeholder="Thing" />
+
+               <label> Please create my page and login</label>
+                <ul class="social-network social-circle">
+                  <li ><a href="#" class="icoFacebook" style="background-color:#5bc0de" ng-click="authenticate('facebook')" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#" class="icoGoogle" style="background-color:#5bc0de" ng-click="authenticate('google')" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
 
       <!--<div ng-include="'views/triad.html'"></div>-->
   </div>
 </div>
+  <script>
+  $("#mycharinput").suggest({key: "AIzaSyDVM18usZy6B_2_VgJILdPiHEx9oBH5pXc",filter: '(all type:"/film/film_character")'}).bind("fb-select", function (e, data) {
+    document.getElementById('mycharinput').value = data.name;
+  });
+
+
+  $("#mymovieinput").suggest({key: "AIzaSyDVM18usZy6B_2_VgJILdPiHEx9oBH5pXc",filter: '(all type:"/film/film")'}).bind("fb-select", function (e, data) {
+    document.getElementById('mymovieinput').value = data.name;
+  });
+
+  $("#myactorinput").suggest({key: "AIzaSyDVM18usZy6B_2_VgJILdPiHEx9oBH5pXc",filter: '(any type:/people/person)'}).bind("fb-select", function (e, data) {
+    document.getElementById('myactorinput').value = data.name;
+  });
+</script>
