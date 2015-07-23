@@ -70,7 +70,9 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
 
 })
 
-.constant('API_URL','https://fictiontreeapi.herokuapp.com/')
+
+.constant('API_URL','https://fictiontreeapi.herokuapp.com/') // production
+  //.constant('API_URL','http://localhost:7203/') // localhost
 
 .run(function($window){
   var params = $window.location.search.substring(1);
