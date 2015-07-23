@@ -5,7 +5,7 @@ angular.module('fictiontree2App').service('auth', function ($state,$http,authTok
 
   function authSuccessful(res){
     authToken.setToken(res.token);
-    $state.go('main');
+    $state.go('account');
   }
 
   var urlBuilder = [];

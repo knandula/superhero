@@ -14,8 +14,15 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
       templateUrl: '/views/main.html',
       controller: 'MainCtrl'
     })
+
+    .state('account',{
+      url: '/account',
+      templateUrl: '/views/account.html',
+      controller: 'AccountCtrl'
+    })
+
     .state('triad',{
-      url: '/',
+      url: '/triad',
       templateUrl: '/views/triad.html',
       controller: 'TriadCtrl'
     })
@@ -24,11 +31,17 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
       templateUrl: '/views/register.html',
       controller: 'RegisterCtrl'
   })
+    .state('fileupload',{
+      url: '/',
+      templateUrl: '/views/login.html',
+      controller: 'LoginCtrl'
+    })
     .state('login',{
       url: '/login',
       templateUrl: '/views/login.html',
       controller: 'LoginCtrl'
     })
+
     .state('search',{
       url: '/search.html',
       controller: 'SearchCtrl'
