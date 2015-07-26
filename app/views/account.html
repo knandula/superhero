@@ -1,16 +1,64 @@
-
-<div class="container">
-  <div class="row">
+<div class="container" id="ProfileCover">
+  <div class="row cover">
     <div class="container">
       <div class="fb-profile">
         <img ng-src="{{coverpicpath}}" class="fb-image-lg" alt="Profile image example" align="left" >
+        <button class="addcoverpic" data-toggle="modal" data-target="#uploadview">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Cover Upload" >
+							<span class="glyphicon glyphicon-upload"></span>
+						</span>
+          <span class="full-nav"> CoverPic </span>
+        </button>
+      </div>
+      <div class="fb-profle">
         <img align="left" class="fb-image-profile thumbnail" ng-src="{{profilepicpath}}"  alt="Profile image example"/>
+        <button  class="addprofpic" data-target="#profileuploadview" data-toggle="modal">
+						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="ProfileUpload" >
+							<span class="glyphicon glyphicon-upload"></span>
+						</span>
+          <span class="full-nav"> ProfilePic </span>
+        </button>
+      </div>
         <div class="fb-profile-text">
           <h6>username</h6>
         </div>
       </div>
     </div>
   </div>
+ <div id="uploadview" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Update Cover Picture</h4>
+       </div>
+       <div class="modal-body">
+         <div ng-include="'views/fileupload.html'"/>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+ </div>
+<div id="profileuploadview" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Upadate Profile Picture</h4>
+      </div>
+      <div class="modal-body">
+        <div ng-include="'views/fileupload.html'"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="row">
         <div class="col-md-6">
           <div class="widget-area no-padding blank">
