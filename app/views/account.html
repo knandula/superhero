@@ -1,8 +1,8 @@
-<div class="container" id="ProfileCover">
+<div class="container" id="ProfileCover" ng-show="coverpicdata">
   <div class="row cover">
     <div class="container">
-      <div class="fb-profile">
-        <img ng-src="{{coverpicpath}}" class="fb-image-lg" alt="Profile image example" align="left" >
+      <div class="fb-profile" >
+        <img data-ng-src="{{coverpicdata}}" class="fb-image-lg" alt="Profile image example" align="left" >
         <button class="addcoverpic" data-toggle="modal" data-target="#uploadview">
 						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Cover Upload" >
 							<span class="glyphicon glyphicon-upload"></span>
@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
- <div id="uploadview" class="modal fade" role="dialog">
+ <div id="uploadview"  class="modal fade" role="dialog">
    <div class="modal-dialog">
      <!-- Modal content-->
      <div class="modal-content">
@@ -59,7 +59,7 @@
     </div>
   </div>
 </div>
-  <div class="row">
+  <div class="row" ng-show="coverpicdata">
         <div class="col-md-6">
           <div class="widget-area no-padding blank">
             <div class="status-upload">

@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('fictiontree2App', ['ui.router','ngAnimate','satellizer']);
+angular.module('fictiontree2App', ['ui.router','ngAnimate','satellizer','ngFileUpload']);
 
 

@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('fictiontree2App')
-  .service('alert', function alert($rootScope,$timeout) {
+angular.module('fictiontree2App').service('alert', function alert($rootScope,$timeout) {
     var alertTimeout;
     return function(type,title,message,timeout){
       $rootScope.alert = {

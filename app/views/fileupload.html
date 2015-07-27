@@ -1,35 +1,55 @@
-<!--<form method="post" enctype="multipart/form-data" action="http://localhost:7203/uploadimage">-->
-  <!--<input type="text" name="username">-->
-  <!--<input type="password" name="password">-->
-  <!--<input type="file" name="thumbnail">-->
-  <!--<input type="submit">-->
-<!--</form>-->
-
-<div class="container" style="margin-top:20px" ng-controller="FileuploadCtrl">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-      <!-- image-preview-filename input [CUT FROM HERE]-->
-      <div class="input-group image-preview">
-        <form method="post" enctype="multipart/form-data" action="http://localhost:7203/uploadimage">
-        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                <span class="input-group-btn">
-                    <!-- image-preview-clear button -->
-                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                      <span class="glyphicon glyphicon-remove"></span> Clear
-                    </button>
-                    <!-- image-preview-input -->
-                    <div class="btn btn-default image-preview-input">
-                      <span class="glyphicon glyphicon-folder-open"></span>
-                      <span class="image-preview-input-title">Browse</span>
-                      <input type="file" accept="image/png, image/jpeg, image/gif" id="picture" name="input-file-preview"/> <!-- rename it -->
-                    </div>
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
-                </span>
-          </form>
-      </div><!-- /input-group image-preview [TO HERE]-->
-    </div>
-  </div>
+<div  ng-controller="FileuploadCtrl">Username
+  <input type="text" ng-model="username"></br></br>
+  <input type="checkbox" ng-model="multiple">upload multiple file</br></br>
+  watching model:
+  <div class="button" ngf-select ng-model="files" ngf-multiple="multiple">Select File</div>
+  on file change:
+  <div class="button" ngf-select ngf-change="upload($files)" ngf-multiple="multiple">Select File</div>
+  Drop File:
+  <div ngf-drop ngf-select ng-model="files" class="drop-box"
+       ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
+       accept="image/*,application/pdf">Drop pdfs or images here or click to upload</div>
+  <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+  Files:
+  <ul>
+    <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+  </ul>
+  <!--<img data-ng-src="{{imgsrc}}"/>-->
 </div>
-<!--<script>-->
+</div>
 
-<!--</script>-->
+<!--&lt;!&ndash;<form method="post" enctype="multipart/form-data" action="http://localhost:7203/uploadimage">&ndash;&gt;-->
+  <!--&lt;!&ndash;<input type="text" name="username">&ndash;&gt;-->
+  <!--&lt;!&ndash;<input type="password" name="password">&ndash;&gt;-->
+  <!--&lt;!&ndash;<input type="file" name="thumbnail">&ndash;&gt;-->
+  <!--&lt;!&ndash;<input type="submit">&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+<!--<div class="container" style="margin-top:20px" ng-controller="FileuploadCtrl">-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">-->
+      <!--&lt;!&ndash; image-preview-filename input [CUT FROM HERE]&ndash;&gt;-->
+      <!--<div class="input-group image-preview">-->
+        <!--<form method="post" enctype="multipart/form-data" action="http://localhost:7203/uploadimage">-->
+        <!--<input type="text" class="form-control image-preview-filename" disabled="disabled"> &lt;!&ndash; don't give a name === doesn't send on POST/GET &ndash;&gt;-->
+                <!--<span class="input-group-btn">-->
+                    <!--&lt;!&ndash; image-preview-clear button &ndash;&gt;-->
+                    <!--<button type="button" class="btn btn-default image-preview-clear" style="display:none;">-->
+                      <!--<span class="glyphicon glyphicon-remove"></span> Clear-->
+                    <!--</button>-->
+                    <!--&lt;!&ndash; image-preview-input &ndash;&gt;-->
+                    <!--<div class="btn btn-default image-preview-input">-->
+                      <!--<span class="glyphicon glyphicon-folder-open"></span>-->
+                      <!--<span class="image-preview-input-title">Browse</span>-->
+                      <!--<input type="file" accept="image/png, image/jpeg, image/gif" id="picture" name="input-file-preview" ng-model="formData.file"/> &lt;!&ndash; rename it &ndash;&gt;-->
+                    <!--</div>-->
+                  <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>-->
+                <!--</span>-->
+          <!--</form>-->
+      <!--</div>&lt;!&ndash; /input-group image-preview [TO HERE]&ndash;&gt;-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</script>&ndash;&gt;-->

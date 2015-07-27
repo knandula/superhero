@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,$http,API_URL) {
-
+angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,Upload,$timeout,$http,API_URL,$rootScope,userService) {
 
 
   $(document).on('click', '#close-preview', function(){
@@ -16,7 +15,6 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
       }
     );
   });
-
   $(function() {
     // Create the close button
     var closebtn = $('<button/>', {
@@ -61,6 +59,80 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
       }
 
       reader.readAsDataURL(file);
-   });
+
+
+
+      $scope.formData = {};
+      $scope.submit = function() {
+        $http({
+          method  : 'POST',
+          url     : API_URL + 'uploadimage',
+          data    : $.param($scope.formData),  // pass in data as strings
+          headers : { 'Content-Type': 'multipart/form-data' }  // set the headers so angular passing info as form data (not request payload)
+        })
+          .success(function(data) {
+            console.log(data);
+
+            if (!data.success) {
+              // if not successful, bind errors to error variables
+              $scope.errorName = data.errors.name;
+              $scope.errorSuperhero = data.errors.superheroAlias;
+            } else {
+              // if successful, bind success message to message
+              $scope.message = data.message;
+            }
+          });
+      };
+      $scope.submit1 = function() {
+
+        var url= API_URL + 'uploadimage';
+
+        var fd = new FormData();
+        fd.append('input-file-preview',file);
+
+
+        $http.post(API_URL + 'uploadimage',fd).success(function(res){
+            console.log(res);
+          })
+          .error(function(err){
+            console.log(err);
+          })
+      };
+
+
+    });
   });
+
+
+  $scope.$watch('files', function () {
+    $scope.upload($scope.files);
+  });
+  $scope.log = '';
+
+  $scope.upload = function (files) {
+    console.log(userService.userdata);
+    if (files && files.length) {
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        Upload.upload({
+          url: API_URL + 'uploadimage',
+          fields: {
+            'email': $scope.email
+          },
+          data:JSON.stringify({userdata:userService.userdata,name:"test"}),
+          file: file
+        }).progress(function (evt) {
+          var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+          $scope.log = 'progress: ' + progressPercentage + '% ' +
+          evt.config.file.name + '\n' + $scope.log;
+        }).success(function (data, status, headers, config) {
+          $timeout(function() {
+            $scope.imgsrc = data;
+            $rootScope.$broadcast('coverpageimage', { from:'coverpicupload' , message: data });
+          });
+
+        });
+      }
+    }
+  };
   });
