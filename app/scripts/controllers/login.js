@@ -4,7 +4,6 @@ angular.module('fictiontree2App').controller('LoginCtrl', function ($scope,$http
 
       $scope.submit = function(){
         var url= API_URL + 'login';
-        console.log(url);
         var user = {
           email: $scope.email,
           password: $scope.password
@@ -12,7 +11,7 @@ angular.module('fictiontree2App').controller('LoginCtrl', function ($scope,$http
 
         $auth.login(user,$state).then(function(res){
           userService.userdata = res.data.user;
-
+          $state.go('account')
         }).catch(handleError);
       }
     function handleError(err){

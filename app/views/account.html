@@ -1,9 +1,9 @@
-<div class="container" id="ProfileCover" ng-show="coverpicdata">
+<div class="container" id="ProfileCover">
   <div class="row cover">
     <div class="container">
       <div class="fb-profile" >
         <img data-ng-src="{{coverpicdata}}" class="fb-image-lg" alt="Profile image example" align="left" >
-        <button class="addcoverpic" data-toggle="modal" data-target="#uploadview">
+        <button class="addcoverpic" data-toggle="modal" data-target="#uploadview" ng-click="publish('cover')">
 						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Cover Upload" >
 							<span class="glyphicon glyphicon-upload"></span>
 						</span>
@@ -11,8 +11,8 @@
         </button>
       </div>
       <div class="fb-profle">
-        <img align="left" class="fb-image-profile thumbnail" ng-src="{{profilepicpath}}"  alt="Profile image example"/>
-        <button  class="addprofpic" data-target="#profileuploadview" data-toggle="modal">
+        <img align="left" data-ng-src="{{profilepicdata}}" class="fb-image-profile thumbnail" ng-src="{{profilepicpath}}"  alt="Profile image example"/>
+        <button  class="addprofpic" data-target="#profileuploadview" data-toggle="modal" ng-click="publish('profile')">
 						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="ProfileUpload" >
 							<span class="glyphicon glyphicon-upload"></span>
 						</span>
@@ -59,7 +59,7 @@
     </div>
   </div>
 </div>
-  <div class="row" ng-show="coverpicdata">
+  <div class="row" >
         <div class="col-md-6">
           <div class="widget-area no-padding blank">
             <div class="status-upload">

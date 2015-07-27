@@ -2,7 +2,16 @@
 
 angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,Upload,$timeout,$http,API_URL,$rootScope,userService) {
 
+  $scope.imageType = {};
 
+  $rootScope.$on('imgtype', function (event, args) {
+      switch(args.from)
+      {
+        case "accountImageSelected":
+              $scope.imageType = args.message;
+               break;
+      }
+  });
   $(document).on('click', '#close-preview', function(){
     $('.image-preview').popover('hide');
     // Hover before close the preview
@@ -110,7 +119,6 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
   $scope.log = '';
 
   $scope.upload = function (files) {
-    console.log(userService.userdata);
     if (files && files.length) {
       for (var i = 0; i < files.length; i++) {
         var file = files[i];
@@ -119,7 +127,7 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
           fields: {
             'email': $scope.email
           },
-          data:JSON.stringify({userdata:userService.userdata,name:"test"}),
+          data:JSON.stringify({userdata:userService.userdata,imgtype:$scope.imageType}),
           file: file
         }).progress(function (evt) {
           var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -127,8 +135,13 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
           evt.config.file.name + '\n' + $scope.log;
         }).success(function (data, status, headers, config) {
           $timeout(function() {
-            $scope.imgsrc = data;
-            $rootScope.$broadcast('coverpageimage', { from:'coverpicupload' , message: data });
+            if($scope.imageType == "profile") {
+              $scope.profimgsrc = data;
+            }
+            else if($scope.imageType == 'cover') {
+              $scope.imgsrc = data;
+            }
+            $rootScope.$broadcast('picupload', { from:'coverpicupload' , message: data , for:$scope.imageType  });
           });
 
         });
