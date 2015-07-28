@@ -16,7 +16,7 @@ angular.module('fictiontree2App').factory('userDataService', function ($http,$q,
 
     function getCover() {
       var headers = {
-        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Origin' : 'https://fictiontree.herokuapp.com',
         'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -33,7 +33,7 @@ angular.module('fictiontree2App').factory('userDataService', function ($http,$q,
 
     function getProfile() {
       var headers = {
-        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Origin' : 'https://fictiontree.herokuapp.com',
         'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
