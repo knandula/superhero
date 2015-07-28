@@ -23,13 +23,13 @@ angular.module('fictiontree2App').controller('ProfileCtrl', function ($scope,use
     .catch(errorCallback);
 
   function CoverPicSuccess(data){
-    var d = data.split("\\");
+    var d = data.toString().split("\\");
     console.log(d);
     $scope.coverpicdata =  API_URL + "//" + d[1] + "//" + d[2];
   }
 
   function ProfPicSuccess(data){
-    var d = data.split("\\");
+    var d = data.toString().split("\\");
     console.log(d);
     $scope.profilepicdata = API_URL + "//" + d[1] + "//" + d[2];
   }
