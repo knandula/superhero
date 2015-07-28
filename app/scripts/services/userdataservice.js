@@ -15,16 +15,10 @@ angular.module('fictiontree2App').factory('userDataService', function ($http,$q,
 
 
     function getCover() {
-      var headers = {
-        'Access-Control-Allow-Origin' : 'https://fictiontree.herokuapp.com',
-        'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      };
+
       return $http({
          method:'POST',
          url: coverurl,
-        headers:headers,
         data:userService.userdata
       }).then(sendResponseData)
         .catch(sendError);
@@ -32,16 +26,9 @@ angular.module('fictiontree2App').factory('userDataService', function ($http,$q,
 
 
     function getProfile() {
-      var headers = {
-        'Access-Control-Allow-Origin' : 'https://fictiontree.herokuapp.com',
-        'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      };
       return $http({
         method:'POST',
         url: profileurl,
-        headers:headers,
         data:userService.userdata
       }).then(sendResponseDataProfile)
         .catch(sendError);
