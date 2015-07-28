@@ -23,15 +23,14 @@ angular.module('fictiontree2App').controller('ProfileCtrl', function ($scope,use
     .catch(errorCallback);
 
   function CoverPicSuccess(data){
-    console.log("coverpicurl");
-    var tmp = data.replace("public\\","");
-
+    var tmp = data.toString().replace("public\\","");
+    console.log(tmp);
     $scope.coverpicdata = API_URL + tmp;
   }
 
   function ProfPicSuccess(data){
-    console.log("profilepicurl");
-    var tmp = data.replace("public\\","");
+    var tmp = data.toString().replace("public\\","");
+    console.log(tmp);
     $scope.profilepicdata = API_URL + tmp;
   }
 
