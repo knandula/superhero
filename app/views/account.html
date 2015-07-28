@@ -1,146 +1,103 @@
-<div class="container" id="ProfileCover">
-  <div class="row cover">
+<div class="row">
+  <div ng-include="'views/searchverti.html'"/>
+  </div>
+<div class="row">
+  <div class="col-md-5 topmargin">
+    <div ng-include="'views/triad.html'"/>
+    </div>
+  <div class="col-md-7 topmargin">
     <div class="container">
-      <div class="fb-profile" >
-        <img data-ng-src="{{coverpicdata}}" class="fb-image-lg" alt="Profile image example" align="left" >
-        <button class="addcoverpic" data-toggle="modal" data-target="#uploadview" ng-click="publish('cover')">
-						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="Cover Upload" >
-							<span class="glyphicon glyphicon-upload"></span>
-						</span>
-          <span class="full-nav"> CoverPic </span>
-        </button>
-      </div>
-      <div class="fb-profle">
-        <img align="left" data-ng-src="{{profilepicdata}}" class="fb-image-profile thumbnail" ng-src="{{profilepicpath}}"  alt="Profile image example"/>
-        <button  class="addprofpic" data-target="#profileuploadview" data-toggle="modal" ng-click="publish('profile')">
-						<span class="small-nav" data-toggle="tooltip" data-placement="right" title="ProfileUpload" >
-							<span class="glyphicon glyphicon-upload"></span>
-						</span>
-          <span class="full-nav"> ProfilePic </span>
-        </button>
-      </div>
-        <div class="fb-profile-text">
-          <h6>username</h6>
-        </div>
-      </div>
-    </div>
-  </div>
- <div id="uploadview"  class="modal fade" role="dialog">
-   <div class="modal-dialog">
-     <!-- Modal content-->
-     <div class="modal-content">
-       <div class="modal-header">
-         <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title">Update Cover Picture</h4>
-       </div>
-       <div class="modal-body">
-         <div ng-include="'views/fileupload.html'"/>
-       </div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       </div>
-     </div>
-   </div>
- </div>
-<div id="profileuploadview" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Upadate Profile Picture</h4>
-      </div>
-      <div class="modal-body">
-        <div ng-include="'views/fileupload.html'"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-  <div class="row" >
-        <div class="col-md-6">
-          <div class="widget-area no-padding blank">
-            <div class="status-upload">
-              <form>
-                <textarea placeholder="What are you doing right now?" ></textarea>
-                <ul>
-                  <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
-                  <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
-                  <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
-                  <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+      <ul class="timeline">
+        <li>
+          <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+            </div>
+            <div class="timeline-body">
+              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+            </div>
+            <div class="timeline-body">
+              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+            </div>
+            <div class="timeline-body">
+              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+              <hr>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
                 </ul>
-                <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
-              </form>
-            </div><!-- Status Upload  -->
-          </div><!-- Widget Area -->
-        </div>
-      <div class="col-md-6">
-        <div class="container">
-          <ul class="timeline">
-            <li>
-              <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
-                </div>
-                <div class="timeline-body">
-                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                </div>
               </div>
-            </li>
-            <li>
-              <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                </div>
-                <div class="timeline-body">
-                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                </div>
-                <div class="timeline-body">
-                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                  <hr>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                </div>
-                <div class="timeline-body">
-                  <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+            </div>
+            <div class="timeline-body">
+              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
   </div>
 </div>
+<!--<div class="row" >-->
+  <!--<div class="col-md-6" style="margin-top: 170px;">-->
+    <!--&lt;!&ndash;<div class="widget-area no-padding blank">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="status-upload">&ndash;&gt;-->
+        <!--&lt;!&ndash;<form>&ndash;&gt;-->
+          <!--&lt;!&ndash;<textarea placeholder="What are you doing right now?" ></textarea>&ndash;&gt;-->
+          <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>&ndash;&gt;-->
+          <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+          <!--&lt;!&ndash;<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;</form>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&lt;!&ndash; Status Upload  &ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&lt;!&ndash; Widget Area &ndash;&gt;&ndash;&gt;-->
+
+
+  <!--<div class="col-md-6">-->
+    <!--<div ng-include="'views/triad.html'"/></div>-->
+  <!--</div>-->
+<!--</div>-->
+  </div>
+</div>
+
+
+
+
 
 
 <script>

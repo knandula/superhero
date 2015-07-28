@@ -20,6 +20,11 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
       templateUrl: '/views/account.html',
       controller: 'AccountCtrl'
     })
+    .state('profile',{
+      url: '/profile',
+      templateUrl: '/views/profile.html',
+      controller: 'ProfileCtrl'
+    })
 
     .state('triad',{
       url: '/triad',

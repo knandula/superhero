@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fictiontree2App').controller('LoginCtrl', function ($scope,$http,$auth,$state,alert,userService,authToken,API_URL,$rootScope) {
+angular.module('fictiontree2App').controller('LoginCtrl', function ($scope,$http,$auth,$state,alert,userService,userDataService,authToken,API_URL,$rootScope) {
 
       $scope.submit = function(){
         var url= API_URL + 'login';
