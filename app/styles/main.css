@@ -274,32 +274,60 @@ a.socialIcon:hover, .socialHoverClass {
   border: 5px dashed blue;
 }
 
+.sidebar {
+  margin-top:50px;
+  margin-left:10px;
+  overflow: hidden;
+  width:100%;
+  height: 300px;
+  box-shadow: 1px 1px 2px #888888;
+}
 
 .topmargin
 {
-  margin-top:170px;
+margin-top:170px
 }
 
 .addprofpic{
   position:relative;
-  top:30px;
-  left:-70px;
   width:auto;
   height:auto;
+  margin-top: 70px;
+  margin-left: 100px;
+  z-index:10;
 }
 
-.fb-profile img.fb-image-lg{
-  z-index: 0;
-  width: 100%;
-  height:300px;
-  margin-bottom: 10px;
+.fb-profile{
+  background-color: #232937;
+  background-image: none;
+  height: 305px;
+  position: relative;
+  margin-top:-20px;
+}
+
+.fb-image-lg{
+  height: 100%;
+  position: relative;
+  display: block;
+  width:100%;
 }
 
 .fb-image-profile
 {
-  margin: -90px 10px 0px 50px;
-  z-index: 9;
-  width:20%;
+  margin: -90px 10px 0px 5px;
+  /* z-index: 9; */
+  width: 160px;
+  height: 160px;
+}
+
+.thumbnail{
+  box-shadow: none;
+  position:absolute;
+  left: 15px;
+  z-index:9;
+  margin-top: 0;
+  top: 243px;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 @media (max-width:768px)
@@ -343,12 +371,12 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 .widget-area {
-  background-color: #fff;
+  background-color: #808080;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 34px;
   -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   -ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
