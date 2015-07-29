@@ -135,12 +135,8 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
           evt.config.file.name + '\n' + $scope.log;
         }).success(function (data, status, headers, config) {
           $timeout(function() {
-            if($scope.imageType == "profile") {
-              $scope.profimgsrc = data;
-            }
-            else if($scope.imageType == 'cover') {
-              $scope.imgsrc = data;
-            }
+
+              $scope.imgsrc = API_URL+ data;
             $rootScope.$broadcast('picupload', { from:'coverpicupload' , message: data , for:$scope.imageType,url:API_URL });
           });
 

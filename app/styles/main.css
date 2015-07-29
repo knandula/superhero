@@ -236,12 +236,44 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 .addcoverpic{
-  position:absolute;
-  top:10px;
-  left:20px;
+  position:relative;
+  top:-300px;
+  left:10px;
   width:auto;
   height:auto;
+
 }
+.button {
+  -moz-appearance: button;
+  /* Firefox */
+  -webkit-appearance: button;
+  /* Safari and Chrome */
+  padding: 10px;
+  margin: 10px;
+  width: auto;
+  text-align: center;
+}
+.imgpreview{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  padding-top: 25px;
+  margin: 10px;
+
+}
+.drop-box {
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  padding-top: 25px;
+  margin: 10px;
+}
+.dragover {
+  border: 5px dashed blue;
+}
+
 
 .topmargin
 {
@@ -249,9 +281,9 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 .addprofpic{
-  position:absolute;
-  top:405px;
-  left:70px;
+  position:relative;
+  top:30px;
+  left:-70px;
   width:auto;
   height:auto;
 }
@@ -330,6 +362,7 @@ a.socialIcon:hover, .socialHoverClass {
 }
 .status-upload {
   background: none repeat scroll 0 0 #f5f5f5;
+  margin-top:-150px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
