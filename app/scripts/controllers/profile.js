@@ -7,43 +7,23 @@
  * # ProfileCtrl
  * Controller of the fictiontree2App
  */
-angular.module('fictiontree2App').controller('ProfileCtrl', function ($scope,userDataService,$rootScope,API_URL) {
+angular.module('fictiontree2App').controller('ProfileCtrl', function ($scope,$http,userService,userDataService,$rootScope,API_URL) {
 
   $scope.publish = function(msg){
     $rootScope.$broadcast('imgtype', { from:'accountImageSelected' , message: msg });
   }
 
+  var url = API_URL + 'getcoverpicdata';
+  $http.post(url,userService.userdata).success(function(data, status) {
+    console.log(data);
+    $scope.coverpicdata = API_URL + data;
+  })
 
-  userDataService.getCoverPic()
-    .then(CoverPicSuccess,null,notification)
-    .catch(errorCallback);
-
-  userDataService.getProfilePic()
-    .then(ProfPicSuccess,null,notification)
-    .catch(errorCallback);
-
-  function CoverPicSuccess(data){
-
-      console.log(data);
-    $scope.coverpicdata =  API_URL + data;
-
-  }
-
-  function ProfPicSuccess(data){
-
-      console.log(data);
-      $scope.profilepicdata = API_URL + data;
-
-  }
-
-  function notification(notification)
-  {
-    console.log(notification);
-  }
-
-  function errorCallback(err){
-    console.log(err);
-  }
+  var url = API_URL + 'getprofilepicdata';
+  $http.post(url,userService.userdata).success(function(data, status) {
+    console.log(data);
+    $scope.profilepicdata = API_URL + data;
+  })
 
   $rootScope.$on('picupload', function (event, args,API_URL) {
     switch(args.from)
