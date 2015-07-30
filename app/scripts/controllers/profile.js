@@ -9,6 +9,18 @@
  */
 angular.module('fictiontree2App').controller('ProfileCtrl', function ($scope,$http,userService,userDataService,$rootScope,API_URL) {
 
+
+  $scope.post = function()
+  {
+    var comment = $scope.comment;
+    var url = API_URL + 'post';
+    $scope.comment = '';
+    $http.post(url,{user: userService.userdata,msg:comment}).success(function(data, status) {
+
+    })
+    $rootScope.$broadcast('post', { from:'post' , message: 'post' });
+  }
+
   $scope.publish = function(msg){
     $rootScope.$broadcast('imgtype', { from:'accountImageSelected' , message: msg });
   }

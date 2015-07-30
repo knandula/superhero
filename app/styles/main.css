@@ -237,10 +237,12 @@ a.socialIcon:hover, .socialHoverClass {
 
 .addcoverpic{
   position:relative;
-  top:-300px;
+  top:-450px;
   left:10px;
   width:auto;
   height:auto;
+  background-color: transparent;
+  background-color: transparent;
 
 }
 .button {
@@ -283,18 +285,26 @@ a.socialIcon:hover, .socialHoverClass {
   box-shadow: 1px 1px 2px #888888;
 }
 
+.triadright {
+  border-left: thick solid #ff0000;
+  border-top :thick solid #ff0000;;
+}
+
+.triadleft {
+  border-top :thick solid #ff0000;;
+}
+
 .topmargin
 {
-margin-top:170px
+margin-top:10px
 }
 
 .addprofpic{
-  position:relative;
-  width:auto;
-  height:auto;
-  margin-top: 135px;
-  margin-left: -175px;
-  z-index:10;
+  position:absolute;
+  margin-top: -20px;
+  margin-left: 135px;
+  z-index:15;
+  background-color: transparent;
 }
 
 .fb-profile{
@@ -323,10 +333,10 @@ margin-top:170px
 }
 
 .thumbnail{
-  position:relative;
-  left: 15px;
+  position:absolute;
+  left: 25px;
   z-index:9;
-  margin-top: -20px;
+  top: -100px;
 
 }
 
@@ -376,20 +386,15 @@ margin-top:170px
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
-  -ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
-  -o-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  border-radius: 1px;
   float: left;
-  margin-top: 0px;
-  padding: 25px 30px;
+  margin-top: -35px;
   position: relative;
+  overflow: hidden;
   width: 100%;
 }
 .status-upload {
-  background: none repeat scroll 0 0 #f5f5f5;
+  background: none repeat scroll 0 0 lightgray;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -403,24 +408,23 @@ margin-top:170px
   width: 100%;
 }
 .status-upload form textarea {
-  background: none repeat scroll 0 0 #fff;
-  border: medium none;
+  background: none repeat scroll 0 0 #f8f8ff;
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   -ms-border-radius: 4px 4px 0 0;
   -o-border-radius: 4px 4px 0 0;
-  border-radius: 4px 4px 0 0;
+  border-radius: 25px;
   color: #777777;
   float: left;
   font-family: Lato;
-  font-size: 14px;
-  height: 75px;
+  font-size: 44px;
+  height: 105px;
   letter-spacing: 0.3px;
   padding: 20px;
   width: 100%;
   resize:vertical;
-  outline:none;
-  border: 1px solid #F2F2F2;
+  outline:inset;
+
 }
 
 .status-upload ul {
@@ -493,12 +497,15 @@ margin-top:170px
   content: " ";
   width: 3px;
   background-color: #eeeeee;
-  left: 25px;
-  margin-right: -1.5px;
+  left: 50%;
+  margin-left: -1.5px;
 }
 .timeline > li {
   margin-bottom: 20px;
   position: relative;
+  width: 50%;
+  float: left;
+  clear: left;
 }
 .timeline > li:before,
 .timeline > li:after {
@@ -517,84 +524,77 @@ margin-top:170px
   clear: both;
 }
 .timeline > li > .timeline-panel {
-  width: calc( 100% - 75px );
-  float: right;
+  width: 95%;
+  float: left;
   border: 1px solid #d4d4d4;
-  border-radius: 2px;
-  padding: 20px;
+  /*border-radius: 2px;*/
+  /*padding: 20px;*/
   position: relative;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
 }
+
 .timeline > li > .timeline-panel:before {
   position: absolute;
   top: 26px;
-  left: -15px;
+  right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-right: 15px solid #ccc;
-  border-left: 0 solid #ccc;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
   border-bottom: 15px solid transparent;
   content: " ";
 }
 .timeline > li > .timeline-panel:after {
   position: absolute;
   top: 27px;
-  left: -14px;
+  right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-right: 14px solid #fff;
-  border-left: 0 solid #fff;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
   border-bottom: 14px solid transparent;
   content: " ";
 }
 .timeline > li > .timeline-badge {
   color: #fff;
-  width: 50px;
-  height: 50px;
+  width: 24px;
+  height: 24px;
   line-height: 50px;
   font-size: 1.4em;
   text-align: center;
   position: absolute;
   top: 16px;
-  left: 0px;
-  margin-right: -25px;
-  background-color: #999999;
+  right: -12px;
+  /*background-color: #999999;*/
   z-index: 100;
+  /*
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
+  */
 }
 .timeline > li.timeline-inverted > .timeline-panel {
-  float: left;
+  float: right;
 }
 .timeline > li.timeline-inverted > .timeline-panel:before {
-  border-right-width: 0;
-  border-left-width: 15px;
-  right: -15px;
-  left: auto;
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
 }
 .timeline > li.timeline-inverted > .timeline-panel:after {
-  border-right-width: 0;
-  border-left-width: 14px;
-  right: -14px;
-  left: auto;
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
 }
-.timeline-badge.primary {
-  background-color: #2e6da4 !important;
+.timeline-badge > a {
+  color: #C5C7C5 !important;
 }
-.timeline-badge.success {
-  background-color: #3f903f !important;
-}
-.timeline-badge.warning {
-  background-color: #f0ad4e !important;
-}
-.timeline-badge.danger {
-  background-color: #d9534f !important;
-}
-.timeline-badge.info {
-  background-color: #5bc0de !important;
+.timeline-badge a:hover {
+  color: #000 !important;
 }
 .timeline-title {
   margin-top: 0;
@@ -602,16 +602,163 @@ margin-top:170px
 }
 .timeline-body > p,
 .timeline-body > ul {
+  padding:20px;
   margin-bottom: 0;
 }
 .timeline-body > p + p {
   margin-top: 5px;
 }
+.timeline-footer{
+  padding:20px;
+  background-color:#f4f4f4;
+}
+.timeline-footer > a{
+  cursor: pointer;
+  text-decoration: none;
+}
+.tooltip{
 
-.timeline-body {
-  display: none;
+  position:absolute;
+  z-index:1020;
+  display:block;
+  visibility:visible;
+  padding:5px;
+  font-size:11px;
+  opacity:0;
+  filter:alpha(opacity=0);
+
+}
+.tooltip.in{
+  /*opacity:0;
+  filter:alpha(opacity=80);*/
+
+}
+.tooltip.top{
+  margin-top:-2px;
+}
+.tooltip.right{
+  margin-left:2px;
+}
+.tooltip.bottom{
+  margin-top:2px;
+}
+.tooltip.left{
+  margin-left:-2px;
+}
+.tooltip.top .tooltip-arrow{
+  bottom:0;
+  left:0;
+  margin-left:0;
+  border-left:0 solid transparent;
+  border-right:5px solid transparent;
+  border-top:0 solid #000;
+}
+.tooltip.left .tooltip-arrow{
+  bottom:0;
+  left:0;
+  margin-left:0;
+  border-left:0 solid transparent;
+  border-right:5px solid transparent;
+  border-top:0 solid #000;
+}
+.tooltip.bottom .tooltip-arrow{
+  bottom:0;
+  left:0;
+  margin-left:0;
+  border-left:0 solid transparent;
+  border-right:5px solid transparent;
+  border-top:0 solid #000;
+}
+.tooltip.right .tooltip-arrow{
+  bottom:0;
+  left:0;
+  margin-left:0;
+  border-left:0 solid transparent;
+  border-right:5px solid transparent;
+  border-top:0 solid #000;
+}
+.tooltip-inner{
+  width:200px;
+  padding:3px 8px;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  background-color:#313131;
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+  border-radius:0px;
+}
+.tooltip-arrow{
+  position:absolute;
+  width:0;
+  height:0;
+}
+.timeline > li.timeline-inverted{
+  float: right;
+  clear: right;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.timeline > li:nth-child(2){
+  margin-top: 60px;
+}
+.timeline > li.timeline-inverted > .timeline-badge{
+  left: -12px;
 }
 
+@media (max-width: 767px) {
+  ul.timeline:before {
+    left: 40px;
+  }
+
+  ul.timeline > li {
+    margin-bottom: 20px;
+    position: relative;
+    width:100%;
+    float: left;
+    clear: left;
+  }
+  ul.timeline > li > .timeline-panel {
+    width: calc(100% - 90px);
+    width: -moz-calc(100% - 90px);
+    width: -webkit-calc(100% - 90px);
+  }
+
+  ul.timeline > li > .timeline-badge {
+    left: 28px;
+    margin-left: 0;
+    top: 16px;
+  }
+
+  ul.timeline > li > .timeline-panel {
+    float: right;
+  }
+
+  ul.timeline > li > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  ul.timeline > li > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+  }
+
+  .timeline > li.timeline-inverted{
+    float: left;
+    clear: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .timeline > li.timeline-inverted > .timeline-badge{
+    left: 28px;
+  }
+}
 #ProfileCover{
   margin: -1px -1px 0;
 }

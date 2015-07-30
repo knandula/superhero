@@ -15,6 +15,12 @@ angular.module('fictiontree2App').config(function($urlRouterProvider,$stateProvi
       controller: 'MainCtrl'
     })
 
+    .state('timeline',{
+      url: '/timeline',
+      templateUrl: '/views/timeline.html',
+      controller: 'TimelineCtrl'
+    })
+
     .state('account',{
       url: '/account',
       templateUrl: '/views/account.html',

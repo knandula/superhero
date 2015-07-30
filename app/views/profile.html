@@ -25,14 +25,14 @@
             <div class="widget-area no-padding blank">
               <div class="status-upload">
                 <form>
-                  <textarea placeholder="Talk about movies , people , objects and fictional characters.  " ></textarea>
-                  <ul>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
-                    <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
-                  </ul>
-                  <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+                  <textarea placeholder="Talk about movies , people , objects and fictional characters.  " name="comment" ng-model="comment" ></textarea>
+                  <!--<ul>-->
+                    <!--<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>-->
+                    <!--<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>-->
+                    <!--<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>-->
+                    <!--<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>-->
+                  <!--</ul>-->
+                  <button ng-click="post()" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
                 </form>
               </div><!-- Status Upload  -->
             </div><!-- Widget Area -->
@@ -43,21 +43,14 @@
 
       </div>
     </div>
-    <div class="profilebody">
+    <div></div>
       <div class="row">
-        <div class="row" >
-          <div class="col-md-3">
-
-          </div>
-          <div class="col-md-9">
-
             <div class="container">
-              <!--<div ng-include="'views/timeline.html'"/></div>-->
-            </div>
-          </div>
+              <br/><br/>
+              <div ng-include="'views/timeline.html'"/></div>
         </div>
       </div>
-    </div>
+
     <div id="uploadview"  class="modal fade" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
