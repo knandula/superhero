@@ -293,16 +293,19 @@ margin-top:170px
   width:auto;
   height:auto;
   margin-top: 70px;
-  margin-left: 100px;
+  margin-left: -100px;
   z-index:10;
 }
 
 .fb-profile{
   background-color: #232937;
   background-image: none;
-  height: 305px;
+  height: 505px;
   position: relative;
-  margin-top:-20px;
+  margin-top:-30px;
+  overflow: hidden;
+  z-index: -1;
+  box-shadow: 10px 1px 6px rgba(0, 0, 0, 0.175);
 }
 
 .fb-image-lg{
@@ -314,20 +317,17 @@ margin-top:170px
 
 .fb-image-profile
 {
-  margin: -90px 10px 0px 5px;
   /* z-index: 9; */
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
 }
 
 .thumbnail{
-  box-shadow: none;
-  position:absolute;
+  position:relative;
   left: 15px;
   z-index:9;
-  margin-top: 0;
-  top: 243px;
-  box-shadow: 10px 10px 5px #888888;
+  margin-top: -20px;
+
 }
 
 @media (max-width:768px)
@@ -376,21 +376,20 @@ margin-top:170px
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
-  border-radius: 34px;
+  border-radius: 4px;
   -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   -ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   -o-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
   float: left;
-  margin-top: 30px;
+  margin-top: 0px;
   padding: 25px 30px;
   position: relative;
   width: 100%;
 }
 .status-upload {
   background: none repeat scroll 0 0 #f5f5f5;
-  margin-top:-150px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -415,7 +414,7 @@ margin-top:170px
   float: left;
   font-family: Lato;
   font-size: 14px;
-  height: 142px;
+  height: 75px;
   letter-spacing: 0.3px;
   padding: 20px;
   width: 100%;

@@ -18,7 +18,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  margin: 0px;
 }
 article,
 aside,
@@ -41,6 +41,35 @@ progress,
 video {
   display: inline-block;
   vertical-align: baseline;
+}
+
+#custom-search-input{
+  padding:20px;
+}
+
+.loginbody{
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-top: 100px;
+}
+
+.profilebody{
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top:-100px;
+  overflow: hidden;
+}
+.accountbody{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top:-20px;
+  overflow: hidden;
+}
+
+.mainbody{
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 100px;
 }
 audio:not([controls]) {
   display: none;
@@ -1594,17 +1623,17 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 100%;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 100%;
   }
 }
 .container-fluid {
