@@ -136,7 +136,7 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
         }).success(function (data, status, headers, config) {
           $timeout(function() {
 
-              $scope.imgsrc = API_URL+ data;
+              $scope.imgsrc =  data;
             $rootScope.$broadcast('picupload', { from:'coverpicupload' , message: data , for:$scope.imageType,url:API_URL });
           });
 

@@ -27,14 +27,12 @@ angular.module('fictiontree2App').controller('ProfileCtrl', function ($scope,$ht
 
   var url = API_URL + 'getcoverpicdata';
   $http.post(url,userService.userdata).success(function(data, status) {
-    console.log(data);
-    $scope.coverpicdata = API_URL + data;
+    $scope.coverpicdata =  data;
   })
 
   var url = API_URL + 'getprofilepicdata';
   $http.post(url,userService.userdata).success(function(data, status) {
-    console.log(data);
-    $scope.profilepicdata = API_URL + data;
+    $scope.profilepicdata =  data;
   })
 
   $rootScope.$on('picupload', function (event, args,API_URL) {
@@ -43,13 +41,10 @@ angular.module('fictiontree2App').controller('ProfileCtrl', function ($scope,$ht
       case 'coverpicupload':
         if(args.for == 'cover')
         {
-          var tmp = args.message.replace("public\\","");
-          $scope.coverpicdata = args.url+tmp;}
+          $scope.coverpicdata = args.message;}
         else
         if(args.for == 'profile'){
-          console.log(args.message);
-          var tmp = args.message.replace("public\\","");
-          $scope.profilepicdata = args.url+tmp;}
+          $scope.profilepicdata = args.message}
         break;
       case 'searchMovie':
 
