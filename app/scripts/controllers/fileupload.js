@@ -132,7 +132,7 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
           file: file
         }).progress(function (evt) {
           var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-          $scope.log = 'progress: ' + progressPercentage + '% ';
+          $scope.log =  progressPercentage;
         }).success(function (data, status, headers, config) {
           $timeout(function() {
               $scope.imgsrc =  data;
