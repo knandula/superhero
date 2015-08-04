@@ -124,6 +124,7 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
         var file = files[i];
         Upload.upload({
           url: API_URL + 'uploadimage',
+          method:'POST',
           fields: {
             'email': $scope.email
           },
@@ -131,11 +132,9 @@ angular.module('fictiontree2App').controller('FileuploadCtrl', function ($scope,
           file: file
         }).progress(function (evt) {
           var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-          $scope.log = 'progress: ' + progressPercentage + '% ' +
-          evt.config.file.name + '\n' + $scope.log;
+          $scope.log = 'progress: ' + progressPercentage + '% ';
         }).success(function (data, status, headers, config) {
           $timeout(function() {
-
               $scope.imgsrc =  data;
             $rootScope.$broadcast('picupload', { from:'coverpicupload' , message: data , for:$scope.imageType,url:API_URL });
           });
